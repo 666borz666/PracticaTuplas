@@ -19,19 +19,26 @@ def contarPalabras(tupla1,tupla2):
         contarPalabras=0
     return
 #reto 3
+#reto 3
 def esParAmigable(tupla):
     """
     """
+    suma1 = suma2 = 0
     for num in tupla:
         if tupla[0]!=tupla[1]:
-            suma=0
             for i in range(1,num):
-                if num%i==0:
-                    suma+=i
-            print(suma)
+                if num == tupla[0]:
+                    if num%i==0:
+                        suma1+=i
+                else:
+                    if num%i==0:
+                        suma2+=i
         else:
-            print(False)
-            return
+            return print(False)
+    if suma1==tupla[1] and suma2==tupla[0]:
+        return print(True)
+    else:
+        return print(False)
 #reto 4
 
 #reto 5
