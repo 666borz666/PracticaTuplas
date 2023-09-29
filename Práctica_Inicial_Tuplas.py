@@ -19,7 +19,19 @@ def contarPalabras(tupla1,tupla2):
         contarPalabras=0
     return
 #reto 3
-
+def esParAmigable(tupla):
+    """
+    """
+    for num in tupla:
+        if tupla[0]!=tupla[1]:
+            suma=0
+            for i in range(1,num):
+                if num%i==0:
+                    suma+=i
+            print(suma)
+        else:
+            print(False)
+            return
 #reto 4
 
 #reto 5
@@ -32,7 +44,10 @@ tupla2=("ayer hizo bastante calor","en el laboratorio hace calor")
 contarPalabras(tupla1,tupla2)
 """
 #reto 3
-
+esParAmigable((220, 284))  
+#esParAmigable ((15, 18))  
+#esParAmigable ((1210, 1184))  
+#esParAmigable ((890, 890))  
 #reto 4
 
 #reto 5
