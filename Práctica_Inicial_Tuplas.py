@@ -3,7 +3,8 @@
 #Ultima Modificación: 29/09/2023
 #Versión: 3.10.6
 #importación de librerias
-
+import sys
+sys.setrecursionlimit(5000)
 #creación de funciones
 #reto 2
 def contarPalabras(tupla1,tupla2):
@@ -18,7 +19,6 @@ def contarPalabras(tupla1,tupla2):
         print("La palabra",a,"se repite",contarPalabras,"veces")
         contarPalabras=0
     return
-#reto 3
 #reto 3
 def esParAmigable(tupla):
     """
@@ -39,8 +39,42 @@ def esParAmigable(tupla):
         return print(True)
     else:
         return print(False)
+    
+            
 #reto 4
-
+def mostrarCercano(tupla):
+    
+    dif1 = dif2 = 0
+    num1 = 0
+    num2 = 0
+    difAux1=1000
+    difAux2= 1000
+    numFijo = tupla[0]
+    for num in tupla[1:]:
+        if numFijo ==num:
+            return print(f"Dentro de la tupla hay el número más cercano a {tupla[0]} es el mismo:", num)
+        else:
+            
+            if num>numFijo:
+               dif1 = num - numFijo
+               if dif1<difAux1:
+                   num1=num
+                   difAux1=dif1
+            elif num<numFijo:
+                dif2= numFijo - num
+                if difAux2>dif2:
+                    num2=num
+                    difAux2=dif2
+    if (num1-numFijo)==abs(num2-numFijo):
+         if num1<num2:
+            print(num1)
+         else:
+            print(num2)
+    else:
+        if (num1-numFijo)<abs(num2-numFijo):
+            print(num1)
+        else:
+            print(num2)
 #reto 5
 
 #programa principal
@@ -51,10 +85,11 @@ tupla2=("ayer hizo bastante calor","en el laboratorio hace calor")
 contarPalabras(tupla1,tupla2)
 """
 #reto 3
-esParAmigable((220, 284))  
-#esParAmigable ((15, 18))  
-#esParAmigable ((1210, 1184))  
-#esParAmigable ((890, 890))  
+##esParAmigable((220, 284))  
+##esParAmigable ((15, 18))  
+##esParAmigable ((1210, 1184))  
+##esParAmigable ((890, 890))  
 #reto 4
-
+mostrarCercano ((8, 11, 4, 10, 100)) 
+mostrarCercano ((8, 11, 10, 6, 4)) 
 #reto 5
