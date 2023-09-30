@@ -45,10 +45,8 @@ def esParAmigable(tupla):
 def mostrarCercano(tupla):
     
     dif1 = dif2 = 0
-    num1 = 0
-    num2 = 0
-    difAux1=1000
-    difAux2= 1000
+    num1 = num2 = 0
+    difAux1 = difAux2 = 1000
     numFijo = tupla[0]
     for num in tupla[1:]:
         if numFijo ==num:
