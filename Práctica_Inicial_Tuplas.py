@@ -52,7 +52,7 @@ def mostrarCercano(tupla):
     numFijo = tupla[0]
     for num in tupla[1:]:
         if numFijo ==num:
-            return print(f"Dentro de la tupla hay el número más cercano a {tupla[0]} es el mismo:", num)
+            return print(f"Dentro de la tupla  el número más cercano a {tupla[0]} es el mismo:", num)
         else:
             
             if num>numFijo:
