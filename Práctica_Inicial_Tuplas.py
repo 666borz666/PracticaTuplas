@@ -1,6 +1,6 @@
 #Elaborado por: Daniel Campos y Junior Monge
 #Fecha de Creación: 29/09/2023 8:55am
-#Ultima Modificación: 29/09/2023
+#Ultima Modificación: 1/10/2023 10:37am
 #Versión: 3.10.6
 #importación de librerias
 import sys
@@ -39,11 +39,8 @@ def esParAmigable(tupla):
         return print(True)
     else:
         return print(False)
-    
-            
 #reto 4
 def mostrarCercano(tupla):
-    
     dif1 = dif2 = 0
     num1 = num2 = 0
     difAux1 = difAux2 = 1000
@@ -74,20 +71,42 @@ def mostrarCercano(tupla):
         else:
             print(num2)
 #reto 5
-
+def enfrentar(equipos):
+    if not isinstance(equipos, list):
+        print("Debe ingresar una lista para enfrentar.")
+        return 
+    elif len(equipos) < 2:
+        print("Debe ingresar más de un valor para poder enfrentar.")
+        return 
+    for equipo in equipos:
+        if not isinstance(equipo, tuple) or len(equipo) != 2:
+            print("Todos los elementos de la lista deben ser tuplas de dos elementos.")
+            return 
+    enfrentaciones = []
+    for i in range(len(equipos)):
+        for j in range(i+1, len(equipos)):
+            enfrentacion = (equipos[i][0], equipos[j][0])
+            enfrentaciones.append(enfrentacion)
+    print(enfrentaciones)
+    return
 #programa principal
 #reto 2
-"""
-tupla1=("calor","ayer","el","mañana")
-tupla2=("ayer hizo bastante calor","en el laboratorio hace calor")
-contarPalabras(tupla1,tupla2)
-"""
+#tupla1=("calor","ayer","el","mañana")
+#tupla2=("ayer hizo bastante calor","en el laboratorio hace calor")
+#contarPalabras(tupla1,tupla2)
+
 #reto 3
 ##esParAmigable((220, 284))  
 ##esParAmigable ((15, 18))  
 ##esParAmigable ((1210, 1184))  
 ##esParAmigable ((890, 890))  
+
 #reto 4
-mostrarCercano ((8, 11, 4, 10, 100)) 
-mostrarCercano ((8, 11, 10, 6, 4)) 
+#mostrarCercano ((8, 11, 4, 10, 100)) 
+#mostrarCercano ((8, 11, 10, 6, 4)) 
+
 #reto 5
+#enfrentar([("CRC", "Costa Rica"), ("USA", "Estados Unidos"), ("MEX", "México"), ("PAN", "Panamá")])
+#enfrentar((("CRC", "Costa Rica"), ("USA", "Estados Unidos")))
+#enfrentar([("CRC", "Costa Rica")])
+#enfrentar([("CRC", "Costa Rica"), ["USA", "Estados Unidos"]])
